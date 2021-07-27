@@ -22,8 +22,10 @@ app.get('/', (req, res) => {
     res.status(200).send(`SERVER RUNNING IN PORT ${PORT}`);
 });
 
-const { authRouter, userRouter } = require('./src/Routers');
+const { authRouter, userRouter, conversationRouter, messageRouter } = require('./src/Routers');
 app.use('/auth', authRouter);
 app.use('/user', userRouter);
+app.use('/conversation', conversationRouter);
+app.use('/message', messageRouter);
 
 app.listen(PORT, () => console.log(`SERVER RUNNING IN PORT ${PORT}`));
