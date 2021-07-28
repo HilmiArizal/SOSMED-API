@@ -22,6 +22,7 @@ module.exports = {
     },
 
     login: async (req, res) => {
+        console.log('masuk');
         try {
             const encryptedPassword = crypto.createHmac('sha256', "SECRET_KEY").update(req.body.password).digest("base64");
 

@@ -28,4 +28,4 @@ app.use('/user', userRouter);
 app.use('/conversation', conversationRouter);
 app.use('/message', messageRouter);
 
-app.listen(PORT, () => console.log(`SERVER RUNNING IN PORT ${PORT}`));
+app.listen(PORT, '0.0.0.0', () => console.log(`SERVER RUNNING IN PORT ${PORT}`));
