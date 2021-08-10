@@ -7,9 +7,9 @@ module.exports = {
         try {
             const dataUser = await User.find();
 
-            res.status(200).json(dataUser);
+            res.status(200).send(dataUser);
         } catch (err) {
-            res.status(500).json(err);
+            res.status(500).send(err);
         }
     },
 
@@ -18,9 +18,20 @@ module.exports = {
         try {
             const dataUser = await User.findById(userId);
             
-            res.status(200).json(dataUser);
+            res.status(200).send(dataUser);
         } catch (err) {
-            res.status(500).json(err);
+            res.status(500).send(err);
+        }
+    },
+
+    getUserPostById: async (req, res) => {
+        const userId = req.params.userId;
+        try {
+            const dataUserPost = await User.findById(userId);
+
+            res.status(200).send(dataUserPost);
+        } catch (err) {
+            res.status(500).send(err);
         }
     }
 
